@@ -6,8 +6,9 @@ Instructions:
 4. Make config menu 
 5. Configure and save config file
 6. Compile Kernel and Modules
-7. Make Boot Files
-8. Modify the Grub Config
+7. Strip unnecessary modules
+8. Make Boot Files
+9. Modify the Grub Config
 
 
 
@@ -29,8 +30,12 @@ Steps:
 6. Compile Kernel and Modules: 
   - make -j(CoreQTY) && sudo make modules_install -j(CoreQTY)
 
-7. Make Boot files: 
+7. Strip Unnecessary Modules:
+  - cd /lib/modules/kernel#
+  - find . -name *.ko -exec strip --strip-unneeded {} +
+
+8. Make Boot files: 
   - sudo make install
 
-8. Modify the Grub Config:
+9. Modify the Grub Config:
   - sudo grub-mkconfig -o /boot/grub/grub.cfg
