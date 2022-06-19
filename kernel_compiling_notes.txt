@@ -1,4 +1,5 @@
 Instructions: 
+-------------
 1. Fulfill prerequisites
 2. Download source
 3. Unpack source
@@ -9,23 +10,27 @@ Instructions:
 8. Modify the Grub Config
 
 
+
+Steps:
+------
 1. Prerequisites:
-- sudo apt install libelf-dev
-- sudo apt install dwarves
+  - sudo apt install libelf-dev
+  - sudo apt install dwarves
 
 2. Kernel Source: 
-- kernel.org
+  - kernel.org
 
 3. Unpack: 
-- tar -xvf filename.ext
+  - tar -xvf filename.ext
 
 4-5. Make the Config Menu: 
-- make menuconfig -j(CoreQTY)
+  - make menuconfig -j(CoreQTY)
 
 6. Compile Kernel and Modules: 
-- make -j(CoreQTY) && sudo make modules_install -j(CoreQTY)
+  - make -j(CoreQTY) && sudo make modules_install -j(CoreQTY)
 
 7. Make Boot files: 
-- sudo make install
+  - sudo make install
 
-8. 
+8. Modify the Grub Config:
+  - sudo grub-mkconfig -o /boot/grub/grub.cfg
