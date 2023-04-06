@@ -1,0 +1,2 @@
+Monitor Syslog:
+sudo tail -f /var/log/syslog
