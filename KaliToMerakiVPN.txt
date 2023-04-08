@@ -1,0 +1,2 @@
+Add these modules to resolve CBC Key size 0 errors: 
+sudo apt install libstrongswan-standard-plugins libstrongswan-extra-plugins
