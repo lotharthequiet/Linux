@@ -1,6 +1,6 @@
 1. sudo apt-get install xrdp
 2. sudo nano /etc/xrdp/startwm.sh
-3. Add the following text "export $(dbus-launch)" AFTER THE LINE: "test -x /etc/X11/Xsession && exec /etc/X11/Xsession"
+3. Add the following text "export $(dbus-launch)" BEFORE THE LINE: "test -x /etc/X11/Xsession && exec /etc/X11/Xsession"
 4. Save the file in Nano
 5. sudo systemctl enable xrdp
 6. sudo ststemctl enable xrdp-sesman
