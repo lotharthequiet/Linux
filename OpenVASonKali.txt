@@ -1,0 +1,25 @@
+OpenVAS on Kali Setup Instructions:
+-----------------------------------
+sudo apt-get install openvas                                                - Install the OpenVAS package
+sudo gvm-setup                                                              - Run the OpenVAS setup application
+sudo gvm-check-setup                                                        - Run the OpenVAS setup verfication application
+sudo runuser -u _gvm -- gvmd --create-user=admin --new-password=password    - Create the admin user and set the password to 'password'
+sudo runuser -u _gvm -- gvmd --user=admin --new-password=password           - Change the admin user's password to 'password' <-- Had to add this step to make it work.
+sudo gvm-start                                                              - Start the OpenVAS system services
+https://localhost:9392                                                      - Visit this address to access OpenVAS
+
+Start OpenVAS Services:
+-----------------------
+sudo gvm-start
+
+Stop OpenVAS Services:
+----------------------
+sudo gvm-stop
+
+Add User:
+---------
+sudo runuser -u _gvm -- gvmd --create-user=admin --new-password=password (Dont forget to change user's password)
+
+Change User Password:
+---------------------
+sudo runuser -u _gvm -- gvmd --user=admin --new-password=password
