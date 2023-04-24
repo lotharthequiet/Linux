@@ -23,3 +23,7 @@ sudo runuser -u _gvm -- gvmd --create-user=admin --new-password=password (Dont f
 Change User Password:
 ---------------------
 sudo runuser -u _gvm -- gvmd --user=admin --new-password=password
+
+Update Feed Repo:
+-----------------
+sudo gvm-feed-update
