@@ -27,3 +27,16 @@ sudo runuser -u _gvm -- gvmd --user=admin --new-password=password
 Update Feed Repo:
 -----------------
 sudo gvm-feed-update
+
+Make OpenVAS Available Externally:
+----------------------------------
+sudo gvm-stop
+sudo nano /usr/lib/systemd/system/greenbone-security-assistant.service
+
+Change the line:
+FROM: ExecStart=/usr/sbin/gsad --listen=127.0.0.1 --port=9392
+TO: ExecStart=/usr/sbin/gsad --listen=0.0.0.0 --port=4500
+
+sudo gvm-start
+
+(Now OpenVAS/Greenbone will be available from external IP addresses on port 4500.)
